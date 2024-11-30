@@ -12,6 +12,13 @@ body {
     margin: 0 auto;
 }
 
+.container-back {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0;
+}
+}
+
 header {
     background-color: #4CAF50;
     color: white;
