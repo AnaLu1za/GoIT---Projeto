@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Descarte</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SolNovo</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="educacao.html">Educação Ambiental</a></li>
+                    <li><a href="locais.html">Sobre seu descarte</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>  
+ 
+<section id="descarte-form">
+    <div class="container">
+        <h2>Selecione o Material para Descarte</h2>
+        <p>Informe os materiais que deseja descartar e suas respectivas quantidades. Isso nos ajudará a processar melhor sua solicitação.</p>
+       
+        <form action="/submit-descarte" method="POST" enctype="multipart/form-data">
+            <!-- Informações do Usuário -->
+            <fieldset>
+                <legend>Seus Dados</legend>
+                <div class="form-group">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </fieldset>
+ 
+            <!-- Seleção de Materiais -->
+            <fieldset>
+                <legend>Materiais para Descarte</legend>
+                <div class="form-group">
+                    <label for="material-type">Tipo de Material:</label>
+                    <select id="material-type" name="material_type" required>
+                        <option value="">Selecione</option>
+                        <option value="silicio">Silício</option>
+                        <option value="vidro">Vidro</option>
+                        <option value="aluminio">Alumínio</option>
+                        <option value="polimeros">Polímeros</option>
+                        <option value="metais-raros">Metais Raros</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantidade (em kg):</label>
+                    <input type="number" id="quantity" name="quantity" min="0.1" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição do Material (opcional):</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Inclua informações adicionais sobre o material, como estado de conservação."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Adicionar Imagens do Material (opcional):</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" multiple>
+                </div>
+            </fieldset>
+ 
+            <!-- Informações de Localização -->
+            <fieldset>
+                <legend>Informações de Localização</legend>
+                <div class="form-group">
+                    <label for="address">Endereço:</label>
+                    <input type="text" id="address" name="address" placeholder="Rua, número, bairro" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">Estado:</label>
+                    <select id="state" name="state" required>
+                        <option value="">Selecione</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="mg">Minas Gerais</option>
+                        <!-- Adicione os outros estados aqui -->
+                    </select>
+                </div>
+            </fieldset>
+ 
+            <!-- Botões de Ação -->
+            <div class="form-actions">
+                <button type="reset" class="btn-reset">Limpar</button>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+/* Define cores usadas no CSS */
+:root {
+    --color-light-50: #f7f7f7;
+    --color-dark-50: #4a4e69;
+    --color-dark-100: #22223b;
+    --color-dark-900: #000;
+
+    --color-teal-50: #ddf0e1;
+    --color-teal-100: #91bba1;
+    --color-teal-900: #4CAF50; /* Verde principal */
+    --color-teal-hover: #45a049; /* Hover verde */
+
+}
+
+/* Estilos globais */
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    background: var(--color-gradient);
+    color: var(--color-ligth-50);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--color-teal-900);
+    color: var(--color-light-50);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-light-50);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: var(--color-light-50);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: var(--color-teal-hover);
+    transform: scale(1.05);
+}
+
+/* Formulário de Descarte */
+section#descarte-form {
+    padding: 40px 0;
+    text-align: left;
+    background-color: var(--color-light-50);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+section#descarte-form h2 {
+    font-size: 24px;
+    color: var(--color-dark-100);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section#descarte-form p {
+    font-size: 16px;
+    color: var(--color-dark-50);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+fieldset {
+    border: 2px solid var(--color-teal-100);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark-100);
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid var(--color-teal-100);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-teal-900);
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.btn-reset {
+    background-color: #f44336;
+    color: var(--color-light-50);
+}
+
+button.btn-reset:hover {
+    background-color: #d32f2f;
+}
+
+button.btn-submit {
+    background-color: var(--color-teal-900);
+    color: var(--color-light-50);
+}
+
+button.btn-submit:hover {
+    background-color: var(--color-teal-hover);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section#descarte-form {
+        padding: 20px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+</style>
+ 
