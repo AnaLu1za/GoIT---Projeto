@@ -14,20 +14,19 @@
     </div>
 </header>
 <body>
-    <header>
+     <ul id="servico">
         <h1>Nossos Serviços</h1>
         <h2>Soluções completas em energia solar para você e o meio ambiente.</h2>
-    </header>
- 
+    </ul>
     <main>
         <section id="criacao-instalacao">
             <h2>Criação de placas</h2>
-            <ul>
+            <ul >
                 <li>Projetos personalizados</li>
                 <li>Instalação profissional</li>
                 <li>Diversos tipos de sistemas</li>
-                <ul> Caso esteja interessado entre em contato</ul>
-                <li><a href="contato.html">Contato</a></li>
+                <li> Caso esteja interessado entre em contato</li>
+                <button><a href="contato.html">Contato</a></button>
             </ul>
            
         </section>
@@ -35,8 +34,9 @@
         <section id="reciclagem">
             <h2>Reciclagem de lixo eletrônico</h2>
             <ul>
-                <li><a href="locais.html">pontos de coleta</a></li>
+                
                 <li>Contribuição para a economia circular</li>
+                <button ><a href="locais.html">pontos de coleta</a></button>
  
             </ul>
         </section>
@@ -46,7 +46,24 @@
         </footer>
 </body>
 <style>
-    body {
+button{
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+#ulservico {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+
+}
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -81,6 +98,7 @@ nav ul {
     margin: 0;
     display: flex;
     gap: 20px;
+    text-align: center;
 }
 
 nav ul li {
@@ -92,11 +110,13 @@ nav ul li a {
     text-decoration: none;
     padding: 0.5em 1em;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 nav ul li a:hover {
     background-color: #45a049;
     border-radius: 5px;
+    text-align: center;
 }
 
 main {
@@ -104,17 +124,21 @@ main {
 }
 
 section {
-    margin-bottom: 2em;
+  margin-bottom: 4em;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 2em 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
