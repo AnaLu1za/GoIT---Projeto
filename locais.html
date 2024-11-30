@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Descarte</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+   
+ 
+<section id="descarte-form">
+    <div class="container">
+        <h2>Selecione o Material para Descarte</h2>
+        <p>Informe os materiais que deseja descartar e suas respectivas quantidades. Isso nos ajudará a processar melhor sua solicitação.</p>
+       
+        <form action="/submit-descarte" method="POST" enctype="multipart/form-data">
+            <!-- Informações do Usuário -->
+            <fieldset>
+                <legend>Seus Dados</legend>
+                <div class="form-group">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </fieldset>
+ 
+            <!-- Seleção de Materiais -->
+            <fieldset>
+                <legend>Materiais para Descarte</legend>
+                <div class="form-group">
+                    <label for="material-type">Tipo de Material:</label>
+                    <select id="material-type" name="material_type" required>
+                        <option value="">Selecione</option>
+                        <option value="silicio">Silício</option>
+                        <option value="vidro">Vidro</option>
+                        <option value="aluminio">Alumínio</option>
+                        <option value="polimeros">Polímeros</option>
+                        <option value="metais-raros">Metais Raros</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantidade (em kg):</label>
+                    <input type="number" id="quantity" name="quantity" min="0.1" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição do Material (opcional):</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Inclua informações adicionais sobre o material, como estado de conservação."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Adicionar Imagens do Material (opcional):</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" multiple>
+                </div>
+            </fieldset>
+ 
+            <!-- Informações de Localização -->
+            <fieldset>
+                <legend>Informações de Localização</legend>
+                <div class="form-group">
+                    <label for="address">Endereço:</label>
+                    <input type="text" id="address" name="address" placeholder="Rua, número, bairro" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">Estado:</label>
+                    <select id="state" name="state" required>
+                        <option value="">Selecione</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="mg">Minas Gerais</option>
+                        <!-- Adicione os outros estados aqui -->
+                    </select>
+                </div>
+            </fieldset>
+ 
+            <!-- Botões de Ação -->
+            <div class="form-actions">
+                <button type="reset" class="btn-reset">Limpar</button>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#descarte-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.container h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-reset, .btn-submit {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-reset {
+    background-color: #ddd;
+    color: #333;
+    margin-right: 10px;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-reset:hover {
+    background-color: #ccc;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+</style>
+ 
