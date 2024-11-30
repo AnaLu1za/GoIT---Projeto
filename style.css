@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -67,6 +72,13 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+footer .container{
+    width: 90%;
+    max-width: 1200px;
+    min-width: auto;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
 @media (max-width: 768px) {
