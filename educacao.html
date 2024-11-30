@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Energia Solar Nasce do Seu Lixo Eletrônico</title>
 </head>
+<header>
+    <div class="container">
+        <h1>SolNovo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="educacao.html">Educação Ambiental</a></li>
+                <li><a href="locais.html">Sobre seu descarte</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <body>
-    <h1>Um Futuro Mais Brilhante: A Energia Solar Nasce do Seu Lixo Eletrônico</h1>
+    <h2>Um Futuro Mais Brilhante: A Energia Solar Nasce do Seu Lixo Eletrônico</h2>
     <p>Você já parou para pensar no destino do seu celular antigo, daquela televisão que não funciona mais ou do computador que você trocou por um modelo mais novo? Esses equipamentos, que já fizeram parte do seu dia a dia, podem se transformar em uma fonte de energia limpa e renovável. Sim, você leu certo! Através da reciclagem, seus eletrônicos podem dar origem a placas solares que iluminarão o futuro e reduzirão o impacto ambiental.</p>
     <h2>O Ciclo da Vida dos Eletrônicos: Do Lixo à Energia Limpa</h2>
     <p>O descarte incorreto de equipamentos eletrônicos é um dos maiores problemas ambientais da atualidade. Pilhas, baterias e componentes eletrônicos contêm substâncias tóxicas que contaminam o solo e a água, prejudicando a saúde humana e de outros seres vivos. Além disso, a mineração de metais raros para a fabricação de novos eletrônicos esgota recursos naturais e contribui para a intensificação do efeito estufa.</p>
@@ -23,7 +38,7 @@ body {
 }
 
 h1 {
-    color: green;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -35,6 +50,83 @@ img {
     display: block;
     margin: 20px auto;
     max-width: 100%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+    border-radius: 5px;
+}
+
+main {
+    padding: 2em 0;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 </style>
 </html>
